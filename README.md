@@ -13,7 +13,12 @@ cargo build --release
 
 ### Direct Mode (TCP)
 ```bash
+Linux:
 crier listen 0.0.0.0:5555 -m 'notify-send "Alert" "{}"'
+
+Windows:
+crier listen 0.0.0.0:5556 -m "msg * {}"
+
 crier send 192.168.1.10:5555 -m "Build complete!"
 ```
 

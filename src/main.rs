@@ -438,7 +438,15 @@ fn direct_send(addr: &str, message: &str, auth: Option<&str>) {
 
 fn run_command(cmd: &str) {
     println!("Running: {}", cmd);
-    match Command::new("sh").arg("-c").arg(cmd).status() {
+
+    // Use appropriate shell based on OS
+    #[cfg(target_os = "windows")]
+    let status = Command::new("cmd").arg("/C").arg(cmd).status();
+
+    #[cfg(not(target_os = "windows"))]
+    let status = Command::new("sh").arg("-c").arg(cmd).status();
+
+    match status {
         Ok(s) if !s.success() => eprintln!("Command failed: {}", s),
         Err(e) => eprintln!("Failed to run: {}", e),
         _ => {}
