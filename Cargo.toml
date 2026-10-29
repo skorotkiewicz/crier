@@ -10,3 +10,4 @@ rumqttc = "0.25"
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
 dirs = "6"
+shell-words = "1"
