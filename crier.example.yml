@@ -1,24 +1,21 @@
-# Crier presets
-# Location: ~/.config/crier.yml
-
-default_preset: "local" #optional
-
-# MQTT relay preset
-mybuilds:
-  relay: test.mosquitto.org
-  port: 1883
-  topic: ci/myproject
-  auth: secrettoken
-  message: 'notify-send "Build" "{}"'
-
-# Another MQTT preset
-alerts:
-  relay: broker.hivemq.com
-  topic: home/alerts
-  message: 'echo "{}" >> ~/alerts.log'
+# Crier presets. Use -c FILE to select a custom config.
+default_preset: local
 
 # TCP direct preset
 local:
-  addr: "0.0.0.0:5554"
-  auth: localpass
+  addr: "localhost:5555"
+  auth: example-token
   message: 'notify-send "Local" "{}"'
+
+# MQTT relay preset
+mybuilds:
+  relay: broker.emqx.io
+  port: 1883
+  topic: ci/example
+  message: 'notify-send "Build" "{}"'
+
+# Use a script for logging or other shell operations.
+alerts:
+  relay: broker.emqx.io
+  topic: ci/example/alerts
+  message: './on-message.sh "{}"'

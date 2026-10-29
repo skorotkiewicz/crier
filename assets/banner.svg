@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title description">
+  <title id="title">Crier</title>
+  <desc id="description">Send a message. Run a command. A terminal notification tool for TCP and MQTT.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#151c28"/>
+      <stop offset="1" stop-color="#0c131d"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#3dc9ac" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#3dc9ac" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#f9a477"/>
+      <stop offset="1" stop-color="#64dabb"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#8ea2b8" stroke-opacity=".055"/>
+    </pattern>
+    <clipPath id="frame">
+      <rect width="1280" height="360" rx="20"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="360" fill="url(#background)"/>
+    <rect width="1280" height="360" fill="url(#grid)"/>
+    <ellipse cx="1090" cy="186" rx="370" ry="290" fill="url(#glow)"/>
+    <g fill="none" stroke="#64dabb" stroke-opacity=".08">
+      <circle cx="1080" cy="190" r="120"/>
+      <circle cx="1080" cy="190" r="184"/>
+      <circle cx="1080" cy="190" r="248"/>
+    </g>
+
+    <!-- A small megaphone, drawn as vectors so it stays sharp at any size. -->
+    <g transform="translate(68 48)" stroke="#f9a477" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="44" height="44" rx="12" fill="#f9a477" fill-opacity=".08" stroke="#f9a477" stroke-opacity=".2" stroke-width="1"/>
+      <path d="M12 19h6l12-7v20l-12-7h-6z" fill="#f9a477" fill-opacity=".15"/>
+      <path d="m17 26 2 8h5l-3-7M35 18l3-2m-3 10 3 2M36 22h3" fill="none"/>
+    </g>
+    <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+      <text x="128" y="75" fill="#a9b6c8" font-size="12" font-weight="600" letter-spacing="2.4">NOTIFICATIONS FROM YOUR TERMINAL</text>
+      <text x="62" y="206" fill="#f6f0e9" font-size="112" font-weight="800" letter-spacing="-6">Crier</text>
+      <rect x="318" y="188" width="15" height="17" rx="3" fill="#f9a477"/>
+      <text x="68" y="252" fill="#b7c3d3" font-size="25" letter-spacing="-.4">Send a message. Run a command.</text>
+
+      <g font-size="12" font-weight="600" letter-spacing="1.5">
+        <rect x="68" y="283" width="67" height="29" rx="7" fill="#1b2837" stroke="#2c3b4d"/>
+        <text x="88" y="302" fill="#d5deea">TCP</text>
+        <rect x="145" y="283" width="82" height="29" rx="7" fill="#1b2837" stroke="#2c3b4d"/>
+        <text x="162" y="302" fill="#d5deea">MQTT</text>
+      </g>
+    </g>
+
+    <!-- A sender connects to a listener, which runs the notification command. -->
+    <path d="M732 109v104q0 18 18 18h23" fill="none" stroke="url(#signal)" stroke-width="2" stroke-dasharray="5 7"/>
+    <circle cx="732" cy="149" r="5" fill="#f9a477"/>
+    <circle cx="732" cy="190" r="4" fill="#b3c4a0"/>
+    <circle cx="757" cy="231" r="5" fill="#64dabb"/>
+
+    <rect x="699" y="48" width="322" height="65" rx="13" fill="#0a111b" fill-opacity=".4"/>
+    <rect x="695" y="44" width="322" height="65" rx="13" fill="#192230" stroke="#334052"/>
+    <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="17">
+      <text x="719" y="84" fill="#f9a477">$</text>
+      <text x="744" y="84" fill="#e1e8f0">crier send</text>
+      <path d="m969 72 7 6-7 6m-8-6h15" fill="none" stroke="#f9a477" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <rect x="782" y="138" width="432" height="178" rx="16" fill="#050b13" fill-opacity=".28"/>
+    <rect x="774" y="130" width="432" height="178" rx="16" fill="#17222e" stroke="#364856"/>
+    <path d="M775 175h430" stroke="#2c3d4a"/>
+    <circle cx="798" cy="153" r="4" fill="#64dabb"/>
+    <text x="812" y="157" fill="#9aaec0" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="12">crier listen</text>
+    <text x="1117" y="157" fill="#64dabb" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="1.2">READY</text>
+
+    <circle cx="811" cy="215" r="14" fill="#64dabb" fill-opacity=".12"/>
+    <path d="m805 215 4 4 8-8" fill="none" stroke="#64dabb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="839" y="223" fill="#f6f0e9" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="650" letter-spacing="-.5">Build passed!</text>
+    <text x="798" y="263" fill="#a2b2c3" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="13"><tspan fill="#64dabb">&#x2192;</tspan> notify-send "Build" "{}"</text>
+    <rect x=".5" y=".5" width="1279" height="359" rx="19.5" fill="none" stroke="#7f93a8" stroke-opacity=".18"/>
+  </g>
+</svg>
