@@ -119,21 +119,45 @@ network for private notifications.
 
 ## Options
 
-| Option | Purpose |
-| --- | --- |
-| `listen` | Receive messages and run a command |
-| `send` | Send a notification |
-| `-c, --config FILE` | Select a config file |
-| `-p, --preset NAME` | Select a named preset |
-| `-m, --message TEXT` | Listener command or sender message |
-| `-a, --auth TOKEN` | Shared authentication token |
-| `--relay BROKER` | MQTT broker hostname |
-| `--port PORT` | MQTT broker port, default 1883 |
-| `-t, --topic TOPIC` | MQTT topic or listener topic filter |
-| `ADDR` | TCP bind address or destination |
-| `-e, --examples` | Print examples |
-| `-h, --help` | Print help |
-| `-V, --version` | Print version |
+```text
+USAGE:
+  crier listen [OPTIONS] [ADDR]
+  crier send [OPTIONS] [ADDR]
+
+SUBCOMMANDS:
+  listen                    Listen for messages and run a command
+  send                      Send a message
+
+GLOBAL OPTIONS:
+  -c, --config <FILE>       Use a different config file
+  -e, --examples            Show usage examples
+  -h, --help                Print help
+  -V, --version             Print version
+
+COMMON OPTIONS:
+  -p, --preset <NAME>       Use a named preset from the config file
+  -m, --message <TEXT>      Command to run (listen) or text to send (send)
+  -a, --auth <TOKEN>        Authentication token, shared by sender and listener
+
+MQTT MODE:
+  --relay <BROKER>          MQTT broker hostname (e.g., broker.emqx.io)
+  --port <PORT>             MQTT broker port (default: 1883)
+  -t, --topic <TOPIC>       Topic to listen on or send to
+
+TCP MODE:
+  <ADDR>                    Address and port to listen on or send to
+                            Example: localhost:5555
+```
+
+The default config file is `crier.yml` in the platform config directory,
+usually `~/.config/crier.yml` on Linux.
+
+With `default_preset: local` in your config, you can simply run:
+
+```sh
+crier listen
+crier send -m 'Build passed!'
+```
 
 ## Development
 
