@@ -26,8 +26,8 @@ runs the command successfully and replies `OK`.
 ## MQTT
 
 ```sh
-crier listen --relay test.mosquitto.org -t ci/example -m 'notify-send "Build" "{}"'
-crier send --relay test.mosquitto.org -t ci/example -m 'Build complete!'
+crier listen --relay broker.emqx.io -t ci/example -m 'notify-send "Build" "{}"'
+crier send --relay broker.emqx.io -t ci/example -m 'Build complete!'
 ```
 
 The broker port defaults to 1883. Override it with `--port`.
@@ -85,7 +85,7 @@ local:
   message: 'notify-send "Build" "{}"'
 
 mybuilds:
-  relay: test.mosquitto.org
+  relay: broker.emqx.io
   port: 1883
   topic: ci/example
   message: 'notify-send "Build" "{}"'

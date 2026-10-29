@@ -56,7 +56,9 @@ pub(crate) fn listen(
                 }
             }
             Err(error) => {
-                eprintln!("MQTT connection error: {error}; reconnecting in 1 second");
+                eprintln!(
+                    "MQTT connection error for {broker}:{port}: {error}; reconnecting in 1 second"
+                );
                 std::thread::sleep(Duration::from_secs(1));
             }
             _ => {}
@@ -110,7 +112,11 @@ pub(crate) fn send(
                 return Ok(());
             }
             Ok(Ok(_)) => {}
-            Ok(Err(error)) => return Err(io::Error::other(error)),
+            Ok(Err(error)) => {
+                return Err(io::Error::other(format!(
+                    "MQTT connection to {broker}:{port} failed: {error}"
+                )))
+            }
             Err(RecvTimeoutError::Timeout) => {
                 return Err(io::Error::new(
                     io::ErrorKind::TimedOut,

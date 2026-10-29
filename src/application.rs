@@ -20,7 +20,7 @@ pub fn main() -> ExitCode {
 
 fn run(args: Args) -> io::Result<()> {
     if args.examples {
-        println!("TCP:\n  crier listen 0.0.0.0:5555 -m 'notify-send \"Status\" \"{{}}\"'\n  crier send localhost:5555 -m 'Build done!'\n\nMQTT:\n  crier listen --relay test.mosquitto.org -t mybuilds -m 'notify-send \"Status\" \"{{}}\"'\n  crier send --relay test.mosquitto.org -t mybuilds -m 'Build done!'\n\nPresets:\n  crier -c ./project.yml listen -p build\n  crier -c ./project.yml send -p build -m 'Build done!'");
+        println!("TCP:\n  crier listen 0.0.0.0:5555 -m 'notify-send \"Status\" \"{{}}\"'\n  crier send localhost:5555 -m 'Build done!'\n\nMQTT:\n  crier listen --relay broker.emqx.io -t mybuilds -m 'notify-send \"Status\" \"{{}}\"'\n  crier send --relay broker.emqx.io -t mybuilds -m 'Build done!'\n\nPresets:\n  crier -c ./project.yml listen -p build\n  crier -c ./project.yml send -p build -m 'Build done!'");
         return Ok(());
     }
     let command = args.command.ok_or_else(|| {

@@ -9,13 +9,13 @@ local:
 
 # MQTT relay preset
 mybuilds:
-  relay: test.mosquitto.org
+  relay: broker.emqx.io
   port: 1883
   topic: ci/example
   message: 'notify-send "Build" "{}"'
 
 # Use a script for logging or other shell operations.
 alerts:
-  relay: test.mosquitto.org
+  relay: broker.emqx.io
   topic: ci/example/alerts
   message: './on-message.sh "{}"'
