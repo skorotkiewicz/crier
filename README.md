@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="Cargo.toml"><img src="https://img.shields.io/badge/version-0.3.0-f9a477?style=flat-square" alt="Version 0.3.0"></a>
-  <a href="https://aur.archlinux.org/packages/crier"><img src="https://img.shields.io/aur/version/crier?style=flat-square&amp;logo=archlinux&amp;logoColor=white&amp;color=1793d1" alt="AUR package version"></a>
+  <a href="https://aur.archlinux.org/packages/crier-bin"><img src="https://img.shields.io/aur/version/crier-bin?style=flat-square&amp;logo=archlinux&amp;logoColor=white&amp;color=1793d1" alt="AUR crier-bin package version"></a>
   <a href="https://github.com/skorotkiewicz/crier/actions/workflows/release.yml"><img src="https://github.com/skorotkiewicz/crier/actions/workflows/release.yml/badge.svg" alt="Build and release status"></a>
   <a href="Cargo.toml"><img src="https://img.shields.io/badge/Rust-2021-f9a477?style=flat-square&amp;logo=rust&amp;logoColor=white" alt="Rust edition 2021"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-64dabb?style=flat-square" alt="MIT license"></a>
